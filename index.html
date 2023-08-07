@@ -26,41 +26,52 @@
     
     // Conditions if player choses rock.
     if (playerSelection.toLowerCase() == "rock" && computerSelection.toLowerCase() == "scissors") {
-        return "Rock beats scissors. You win!"
+        
+        result = "Rock beats scissors. You win!"
+        return result
     }
 
     if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "paper") {
-        return "Paper beats rock. You lose!"
+
+        result = "Paper beats rock. You lose!"
+        return result
     }
 
     if (playerSelection.toLowerCase() === "rock" && computerSelection.toLowerCase() === "rock") {
-        return "Rock can't beat rock. Draw!"
+        result = "Rock can't beat rock. Draw!"
+        return result
     }
 
     // Conditions if player choses paper.
     if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "paper") {
-        return "Paper can't beat paper. Draw!"
+        result = "Paper can't beat paper. Draw!"
+        return result
     }
 
     if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "scissors") {
-        return "Scissors beat paper. You lose!"
+        result = "Scissors beat paper. You lose!"
+        return result
     }
 
     if (playerSelection.toLowerCase() === "paper" && computerSelection.toLowerCase() === "rock") {
-        return "Paper beats rock. You win!"
+        result = "Paper beats rock. You win!"
+        return result
     }
 
     // Conditions if player choses scissors.
     if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "rock") {
-        return "Rock beats scissors. You lose!"
+        result = "Rock beats scissors. You lose!"
+        return result
     }
 
     if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "scissors") {
-        return "Scissors can't beat scissors. Draw!"
+        result = "Scissors can't beat scissors. Draw!"
+        return result
     }
 
     if (playerSelection.toLowerCase() === "scissors" && computerSelection.toLowerCase() === "paper") {
-        return "Scissors beats paper. You win!"
+        result = "Scissors beats paper. You win!"
+        return result
     }
   
   }
@@ -73,20 +84,21 @@
     let sublose = "lose";
 
     
-        getPlayerChoice();
-        getComputerChoice();
-        playRound(getPlayerChoice(), getComputerChoice()) 
-
-        if (playRound().includes(subwin,0)) {
-            playerWins++;
-        }
-
-        if (playRound().includes(sublose,0)) {
-            computerWins++;
-        }
-      console.log(playRound(getPlayerChoice(), getComputerChoice()))
+    for (let i = 0; i < 5; i++) {
+      playRound()
     
+      if (result.includes(subwin,0)) {
+            playerWins++;
+          }
+      
+        else if (result.includes(sublose,0)) {
+            computerWins++;
+            }
 
+    console.log(result)
+
+        }
+    
     if (playerWins > computerWins) {
         return "You won " + playerWins + " to " + computerWins + "."
     }
@@ -98,10 +110,9 @@
     if (playerWins = computerWins) {
         return "Well, looks like theres a tie. " + computerWins + " to " + playerWins
     }
-
+   
   }
 
-game();
 console.log(game());
 
   </script>
